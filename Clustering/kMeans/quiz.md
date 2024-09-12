@@ -55,86 +55,20 @@ This table represents the initial distance matrix for the given data points. The
 In each table, the smallest distance (which determines the next merge) is highlighted in red.
 
 
-1. Initial distance matrix:
+Initial distance matrix:
 
-<table>
-<tbody>
-<tr>
-<td> </td><td>D1</td><td>D2</td><td>D3</td><td>D4</td><td>D5</td>
-</tr>
-<tr>
-<td>D1</td><td>0</td><td> </td><td> </td><td> </td><td> </td>
-</tr>
-<tr>
-<td>D2</td><td style="color: red;">$\textcolor{red}{\textsf{1}}$</td><td>0</td><td> </td><td> </td><td> </td>
-</tr>
-<tr>
-<td>D3</td><td>2.24</td><td>2</td><td>0</td><td> </td><td> </td>
-</tr>
-<tr>
-<td>D4</td><td>3.61</td><td>3.16</td><td>2</td><td>0</td><td> </td>
-</tr>
-<tr>
-<td>D5</td><td>2.83</td><td>2.83</td><td>2.24</td><td>2.24</td><td>0</td>
-</tr>
-</tbody>
-</table>
+<table><tbody><tr><td> </td><td>D1</td><td>D2</td><td>D3</td><td>D4</td><td>D5</td></tr><tr><td>D1</td><td>0</td><td> </td><td> </td><td> </td><td> </td></tr><tr><td>D2</td><td><font color="red">1</font></td><td>0</td><td> </td><td> </td><td> </td></tr><tr><td>D3</td><td>2.24</td><td>2</td><td>0</td><td> </td><td> </td></tr><tr><td>D4</td><td>3.61</td><td>3.16</td><td>2</td><td>0</td><td> </td></tr><tr><td>D5</td><td>2.83</td><td>2.83</td><td>2.24</td><td>2.24</td><td>0</td></tr></tbody></table>
 
-2. After merging D1 and D2:
+After merging D1 and D2:
 
-<table>
-<tbody>
-<tr>
-<td> </td><td>(D1,D2)</td><td>D3</td><td>D4</td><td>D5</td>
-</tr>
-<tr>
-<td>(D1,D2)</td><td>0</td><td> </td><td> </td><td> </td>
-</tr>
-<tr>
-<td>D3</td><td style="color: red;">$\textcolor{red}{\textsf{1}}$>2</td><td>0</td><td> </td><td> </td>
-</tr>
-<tr>
-<td>D4</td><td>3.16</td><td>2</td><td>0</td><td> </td>
-</tr>
-<tr>
-<td>D5</td><td>2.83</td><td>2.24</td><td>2.24</td><td>0</td>
-</tr>
-</tbody>
-</table>
+<table><tbody><tr><td> </td><td>(D1,D2)</td><td>D3</td><td>D4</td><td>D5</td></tr><tr><td>(D1,D2)</td><td>0</td><td> </td><td> </td><td> </td></tr><tr><td>D3</td><td><font color="red">2</font></td><td>0</td><td> </td><td> </td></tr><tr><td>D4</td><td>3.16</td><td>2</td><td>0</td><td> </td></tr><tr><td>D5</td><td>2.83</td><td>2.24</td><td>2.24</td><td>0</td></tr></tbody></table>
 
-3. After merging (D1,D2) with D3:
+After merging (D1,D2) with D3:
 
-<table>
-<tbody>
-<tr>
-<td> </td><td>((D1,D2),D3)</td><td>D4</td><td>D5</td>
-</tr>
-<tr>
-<td>((D1,D2),D3)</td><td>0</td><td> </td><td> </td>
-</tr>
-<tr>
-<td>D4</td><td style="color: red;">$\textcolor{red}{\textsf{1}}$>2</td><td>0</td><td> </td>
-</tr>
-<tr>
-<td>D5</td><td>2.24</td><td>2.24</td><td>0</td>
-</tr>
-</tbody>
-</table>
+<table><tbody><tr><td> </td><td>((D1,D2),D3)</td><td>D4</td><td>D5</td></tr><tr><td>((D1,D2),D3)</td><td>0</td><td> </td><td> </td></tr><tr><td>D4</td><td><font color="red">2</font></td><td>0</td><td> </td></tr><tr><td>D5</td><td>2.24</td><td>2.24</td><td>0</td></tr></tbody></table>
 
-4. Final step:
+Final step:
 
-<table>
-<tbody>
-<tr>
-<td> </td><td>(((D1,D2),D3),D4)</td><td>D5</td>
-</tr>
-<tr>
-<td>(((D1,D2),D3),D4)</td><td>0</td><td> </td>
-</tr>
-<tr>
-<td>D5</td><td style="color: red;">$\textcolor{red}{\textsf{1}}$>2.24</td><td>0</td>
-</tr>
-</tbody>
-</table>
+<table><tbody><tr><td> </td><td>(((D1,D2),D3),D4)</td><td>D5</td></tr><tr><td>(((D1,D2),D3),D4)</td><td>0</td><td> </td></tr><tr><td>D5</td><td><font color="red">2.24</font></td><td>0</td></tr></tbody></table>
 
 In each table, the smallest distance (which determines the next merge) is highlighted in red.

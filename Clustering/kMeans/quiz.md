@@ -54,7 +54,6 @@ This table represents the initial distance matrix for the given data points. The
 
 In each table, the smallest distance (which determines the next merge) is highlighted in red.
 
-I apologize for the misunderstanding. Here are the tables with the values below the main diagonal, as requested:
 
 1. Initial distance matrix:
 
@@ -67,7 +66,7 @@ I apologize for the misunderstanding. Here are the tables with the values below 
 <td>D1</td><td>0</td><td> </td><td> </td><td> </td><td> </td>
 </tr>
 <tr>
-<td>D2</td><td style="background-color: red;">1</td><td>0</td><td> </td><td> </td><td> </td>
+<td>D2</td><td style="color: red;">1</td><td>0</td><td> </td><td> </td><td> </td>
 </tr>
 <tr>
 <td>D3</td><td>2.24</td><td>2</td><td>0</td><td> </td><td> </td>

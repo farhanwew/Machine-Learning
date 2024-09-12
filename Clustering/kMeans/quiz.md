@@ -66,7 +66,7 @@ In each table, the smallest distance (which determines the next merge) is highli
 <td>D1</td><td>0</td><td> </td><td> </td><td> </td><td> </td>
 </tr>
 <tr>
-<td>D2</td><td style="color: red;">$\textcolor{1}{\textsf{lorem ipsum}}$</td><td>0</td><td> </td><td> </td><td> </td>
+<td>D2</td><td style="color: red;">$\textcolor{red}{\textsf{1}}$</td><td>0</td><td> </td><td> </td><td> </td>
 </tr>
 <tr>
 <td>D3</td><td>2.24</td><td>2</td><td>0</td><td> </td><td> </td>

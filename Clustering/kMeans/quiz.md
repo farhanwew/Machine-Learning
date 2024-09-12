@@ -64,34 +64,34 @@ Initial distance matrix:
 |    | D1   | D2   | D3   | D4   | D5   |
 |----|------|------|------|------|------|
 | D1 | 0    |      |      |      |      |
-| D2 | <span style="color: red;">1</span> | 0    |      |      |      |
+| D2 | $\textcolor{red}{\textsf{1}}$ | 0    |      |      |      |
 | D3 | 2.24 | 2    | 0    |      |      |
 | D4 | 3.61 | 3.16 | 2    | 0    |      |
 | D5 | 2.83 | 2.83 | 2.24 | 2.24 | 0    |
 
-2. After merging D1 and D2:
+1. After merging D1 and D2:
 
 |         | (D1,D2) | D3   | D4   | D5   |
 |---------|---------|------|------|------|
 | (D1,D2) | 0       |      |      |      |
-| D3      | <span style="color: red;">2</span>       | 0    |      |      |
+| D3      | $\textcolor{red}{\textsf{2}}$       | 0    |      |      |
 | D4      | 3.16    | 2    | 0    |      |
 | D5      | 2.83    | 2.24 | 2.24 | 0    |
 
-3. After merging (D1,D2) with D3:
+1. After merging (D1,D2) with D3:
 
 |              | ((D1,D2),D3) | D4   | D5   |
 |--------------|--------------|------|------|
 | ((D1,D2),D3) | 0            |      |      |
-| D4           | <span style="color: red;">2</span>            | 0    |      |
+| D4           | $\textcolor{red}{\textsf{2}}$           | 0    |      |
 | D5           | 2.24         | 2.24 | 0    |
 
-4. Final step:
+1. Final step:
 
 |                 | (((D1,D2),D3),D4) | D5   |
 |-----------------|-------------------|------|
 | (((D1,D2),D3),D4) | 0               |      |
-| D5              | <span style="color: red;">2.24</span>              | 0    |
+| D5              | $\textcolor{red}{\textsf{2.24}}$            | 0    |
 
 In each table, the smallest distance (which determines the next merge) is highlighted in red.
 

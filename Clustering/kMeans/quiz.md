@@ -91,7 +91,7 @@ In each table, the smallest distance (which determines the next merge) is highli
 <td>(D1,D2)</td><td>0</td><td> </td><td> </td><td> </td>
 </tr>
 <tr>
-<td>D3</td><td style="background-color: red;">2</td><td>0</td><td> </td><td> </td>
+<td>D3</td><td style="color: red;">$\textcolor{red}{\textsf{1}}$>2</td><td>0</td><td> </td><td> </td>
 </tr>
 <tr>
 <td>D4</td><td>3.16</td><td>2</td><td>0</td><td> </td>
@@ -113,7 +113,7 @@ In each table, the smallest distance (which determines the next merge) is highli
 <td>((D1,D2),D3)</td><td>0</td><td> </td><td> </td>
 </tr>
 <tr>
-<td>D4</td><td style="background-color: red;">2</td><td>0</td><td> </td>
+<td>D4</td><td style="color: red;">$\textcolor{red}{\textsf{1}}$>2</td><td>0</td><td> </td>
 </tr>
 <tr>
 <td>D5</td><td>2.24</td><td>2.24</td><td>0</td>
@@ -132,7 +132,7 @@ In each table, the smallest distance (which determines the next merge) is highli
 <td>(((D1,D2),D3),D4)</td><td>0</td><td> </td>
 </tr>
 <tr>
-<td>D5</td><td style="background-color: red;">2.24</td><td>0</td>
+<td>D5</td><td style="color: red;">$\textcolor{red}{\textsf{1}}$>2.24</td><td>0</td>
 </tr>
 </tbody>
 </table>

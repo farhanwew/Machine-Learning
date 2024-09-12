@@ -59,16 +59,39 @@ Initial distance matrix:
 
 <table><tbody><tr><td> </td><td>D1</td><td>D2</td><td>D3</td><td>D4</td><td>D5</td></tr><tr><td>D1</td><td>0</td><td> </td><td> </td><td> </td><td> </td></tr><tr><td>D2</td><td><font color="red">1</font></td><td>0</td><td> </td><td> </td><td> </td></tr><tr><td>D3</td><td>2.24</td><td>2</td><td>0</td><td> </td><td> </td></tr><tr><td>D4</td><td>3.61</td><td>3.16</td><td>2</td><td>0</td><td> </td></tr><tr><td>D5</td><td>2.83</td><td>2.83</td><td>2.24</td><td>2.24</td><td>0</td></tr></tbody></table>
 
-After merging D1 and D2:
+1. Initial distance matrix:
 
-<table><tbody><tr><td> </td><td>(D1,D2)</td><td>D3</td><td>D4</td><td>D5</td></tr><tr><td>(D1,D2)</td><td>0</td><td> </td><td> </td><td> </td></tr><tr><td>D3</td><td><font color="red">2</font></td><td>0</td><td> </td><td> </td></tr><tr><td>D4</td><td>3.16</td><td>2</td><td>0</td><td> </td></tr><tr><td>D5</td><td>2.83</td><td>2.24</td><td>2.24</td><td>0</td></tr></tbody></table>
+|    | D1   | D2   | D3   | D4   | D5   |
+|----|------|------|------|------|------|
+| D1 | 0    |      |      |      |      |
+| D2 | <span style="color: red;">1</span> | 0    |      |      |      |
+| D3 | 2.24 | 2    | 0    |      |      |
+| D4 | 3.61 | 3.16 | 2    | 0    |      |
+| D5 | 2.83 | 2.83 | 2.24 | 2.24 | 0    |
 
-After merging (D1,D2) with D3:
+2. After merging D1 and D2:
 
-<table><tbody><tr><td> </td><td>((D1,D2),D3)</td><td>D4</td><td>D5</td></tr><tr><td>((D1,D2),D3)</td><td>0</td><td> </td><td> </td></tr><tr><td>D4</td><td><font color="red">2</font></td><td>0</td><td> </td></tr><tr><td>D5</td><td>2.24</td><td>2.24</td><td>0</td></tr></tbody></table>
+|         | (D1,D2) | D3   | D4   | D5   |
+|---------|---------|------|------|------|
+| (D1,D2) | 0       |      |      |      |
+| D3      | <span style="color: red;">2</span>       | 0    |      |      |
+| D4      | 3.16    | 2    | 0    |      |
+| D5      | 2.83    | 2.24 | 2.24 | 0    |
 
-Final step:
+3. After merging (D1,D2) with D3:
 
-<table><tbody><tr><td> </td><td>(((D1,D2),D3),D4)</td><td>D5</td></tr><tr><td>(((D1,D2),D3),D4)</td><td>0</td><td> </td></tr><tr><td>D5</td><td><font color="red">2.24</font></td><td>0</td></tr></tbody></table>
+|              | ((D1,D2),D3) | D4   | D5   |
+|--------------|--------------|------|------|
+| ((D1,D2),D3) | 0            |      |      |
+| D4           | <span style="color: red;">2</span>            | 0    |      |
+| D5           | 2.24         | 2.24 | 0    |
+
+4. Final step:
+
+|                 | (((D1,D2),D3),D4) | D5   |
+|-----------------|-------------------|------|
+| (((D1,D2),D3),D4) | 0               |      |
+| D5              | <span style="color: red;">2.24</span>              | 0    |
 
 In each table, the smallest distance (which determines the next merge) is highlighted in red.
+

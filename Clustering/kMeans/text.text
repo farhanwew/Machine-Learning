@@ -237,3 +237,42 @@ In each table, the smallest distance (which determines the next merge) is highli
 </tr>
 </tbody>
 </table>
+
+
+Step 1: Calculate the distance matrix
+
+|    | D1     | D2     | D3     | D4     | D5     |
+|----|--------|--------|--------|--------|--------|
+| D1 | 0      |        |        |        |        |
+| D2 | $\textcolor{red}{\textsf{1}}$ | 0      |        |        |        |
+| D3 | 2.236  | 2      | 0      |        |        |
+| D4 | 3.606  | 2.828  | 2      | 0      |        |
+| D5 | 4.472  | 4.123  | 2.236  | 2.236  | 0      |
+
+Step 2: Merge D1 and D2 (smallest distance: 1)
+
+|         | (D1,D2) | D3     | D4     | D5     |
+|---------|---------|--------|--------|--------|
+| (D1,D2) | 0       |        |        |        |
+| D3      | $\textcolor{red}{\textsf{2}}$ | 0      |        |        |
+| D4      | 2.828   | 2      | 0      |        |
+| D5      | 4.123   | 2.236  | 2.236  | 0      |
+
+Step 3: Merge (D1,D2) and D3 (smallest distance: 2)
+
+|              | ((D1,D2),D3) | D4     | D5     |
+|--------------|--------------|--------|--------|
+| ((D1,D2),D3) | 0            |        |        |
+| D4           | $\textcolor{red}{\textsf{2}}$ | 0      |        |
+| D5           | 2.236        | 2.236  | 0      |
+
+Step 4: Merge ((D1,D2),D3) and D4 (smallest distance: 2)
+
+|                 | (((D1,D2),D3),D4) | D5     |
+|-----------------|-------------------|--------|
+| (((D1,D2),D3),D4) | 0               |        |
+| D5              | $\textcolor{red}{\textsf{2.236}}$ | 0      |
+
+Step 5: Final merge (((D1,D2),D3),D4) and D5 (distance: 2.236)
+
+Resulting dendrogram:

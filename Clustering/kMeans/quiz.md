@@ -5,13 +5,22 @@ agglomerative hierarchical algorithm
 * single link
 * complete link
 
-kmeans algorithm (k=2 and k=3, with the first 2 and 3 data as centroids)
+kmeans algorithm (k=2 and  with the first 2 )
 
 ![alt text](image-1.png)
 
-## Single link
+# Single link
 
-<table><tbody><tr><td> </td><td>1</td><td>2</td><td>3</td><td>4</td><td>5</td></tr><tr><td>1</td><td>0</td><td> </td><td> </td><td> </td><td> </td></tr><tr><td>2</td><td>d(2,1)</td><td>0</td><td> </td><td> </td><td> </td></tr><tr><td>3</td><td>d(3,1)</td><td>d(3,2)</td><td>0</td><td> </td><td> </td></tr><tr><td>4</td><td>d(4,1)</td><td>d(4,2)</td><td>d(4,3)</td><td>0</td><td> </td></tr><tr><td>5</td><td>d(5,1)</td><td>d(5,2)</td><td>d(5,3)</td><td>d(5,4)</td><td>0</td></tr></tbody></table>
+1. Initial distance matrix:
+
+
+|    | D1    | D2    | D3   | D4   | D5 |
+| ---- | ------- | ------- | ------ | ------ | ---- |
+| D1 | 0     |       |      |      |    |
+| D2 | 1     | 0     |      |      |    |
+| D3 | 2.24  | 2     | 0    |      |    |
+| D4 | 3.61  | 2.828 | 2    | 0    |    |
+| D5 | 4.472 | 4.123 | 2.24 | 2.24 | 0  |
 
 he distance is given by:
 
@@ -54,44 +63,160 @@ This table represents the initial distance matrix for the given data points. The
 
 In each table, the smallest distance (which determines the next merge) is highlighted in red.
 
+Step 1: Calculate the distance matrix
 
-Initial distance matrix:
 
-<table><tbody><tr><td> </td><td>D1</td><td>D2</td><td>D3</td><td>D4</td><td>D5</td></tr><tr><td>D1</td><td>0</td><td> </td><td> </td><td> </td><td> </td></tr><tr><td>D2</td><td><font color="red">1</font></td><td>0</td><td> </td><td> </td><td> </td></tr><tr><td>D3</td><td>2.24</td><td>2</td><td>0</td><td> </td><td> </td></tr><tr><td>D4</td><td>3.61</td><td>3.16</td><td>2</td><td>0</td><td> </td></tr><tr><td>D5</td><td>2.83</td><td>2.83</td><td>2.24</td><td>2.24</td><td>0</td></tr></tbody></table>
+|    | D1                            | D2    | D3    | D4    | D5 |
+| ---- | ------------------------------- | ------- | ------- | ------- | ---- |
+| D1 | 0                             |       |       |       |    |
+| D2 | $\textcolor{red}{\textsf{1}}$ | 0     |       |       |    |
+| D3 | 2.236                         | 2     | 0     |       |    |
+| D4 | 3.606                         | 2.828 | 2     | 0     |    |
+| D5 | 4.472                         | 4.123 | 2.236 | 2.236 | 0  |
 
-1. Initial distance matrix:
+Step 2: Merge D1 and D2 (smallest distance: 1)
 
-|    | D1   | D2   | D3   | D4   | D5   |
-|----|------|------|------|------|------|
-| D1 | 0    |      |      |      |      |
-| D2 | <span style="color: red;">1</span> | 0    |      |      |      |
-| D3 | 2.24 | 2    | 0    |      |      |
-| D4 | 3.61 | 3.16 | 2    | 0    |      |
-| D5 | 2.83 | 2.83 | 2.24 | 2.24 | 0    |
 
-2. After merging D1 and D2:
+|         | (D1,D2)                       | D3    | D4    | D5 |
+| --------- | ------------------------------- | ------- | ------- | ---- |
+| (D1,D2) | 0                             |       |       |    |
+| D3      | $\textcolor{red}{\textsf{2}}$ | 0     |       |    |
+| D4      | 2.828                         | 2     | 0     |    |
+| D5      | 4.123                         | 2.236 | 2.236 | 0  |
 
-|         | (D1,D2) | D3   | D4   | D5   |
-|---------|---------|------|------|------|
-| (D1,D2) | 0       |      |      |      |
-| D3      | <span style="color: red;">2</span>       | 0    |      |      |
-| D4      | 3.16    | 2    | 0    |      |
-| D5      | 2.83    | 2.24 | 2.24 | 0    |
+- $d(D3,(D1,D2))= min[(D3,D1), (D3,D2)] = 2 $
+- $d(D4,(D1,D2))= min[(D4,D1), (D4,D2)] = 2.828 $
+- $d(D5,(D1,D2))= min[(D5,D1), (D5,D2)] = 4.123$
 
-3. After merging (D1,D2) with D3:
+Step 3: Merge (D1,D2) and D3 (smallest distance: 2)
 
-|              | ((D1,D2),D3) | D4   | D5   |
-|--------------|--------------|------|------|
-| ((D1,D2),D3) | 0            |      |      |
-| D4           | <span style="color: red;">2</span>            | 0    |      |
-| D5           | 2.24         | 2.24 | 0    |
 
-4. Final step:
+|              | ((D1,D2),D3)                  | D4    | D5 |
+| -------------- | ------------------------------- | ------- | ---- |
+| ((D1,D2),D3) | 0                             |       |    |
+| D4           | $\textcolor{red}{\textsf{2}}$ | 0     |    |
+| D5           | 2.236                         | 2.236 | 0  |
 
-|                 | (((D1,D2),D3),D4) | D5   |
-|-----------------|-------------------|------|
-| (((D1,D2),D3),D4) | 0               |      |
-| D5              | <span style="color: red;">2.24</span>              | 0    |
+- $d(D4,((D1,D2),D3))= min[(D4,(D1,D2)), (D4,D3)] = 2$
+- $d(D5,((D1,D2),D3))= min[(D5,(D1,D2)), (D5,D3)] = 2.236$
 
-In each table, the smallest distance (which determines the next merge) is highlighted in red.
+Step 4: Merge ((D1,D2),D3) and D4 (smallest distance: 2)
 
+
+|                   | (((D1,D2),D3),D4)                 | D5 |
+| ------------------- | ----------------------------------- | ---- |
+| (((D1,D2),D3),D4) | 0                                 |    |
+| D5                | $\textcolor{red}{\textsf{2.236}}$ | 0  |
+
+- $d(D5,((D1,D2),D3),D4)= min[(D5,(D1,D2),D3), (D5,D4)] = 2.236$
+
+Step 5: Final merge (((D1,D2),D3),D4) and D5 (distance: 2.236)
+
+# Complete link
+
+Step 1: Calculate the distance matrix
+
+
+|    | D1                            | D2    | D3    | D4    | D5 |
+| ---- | ------------------------------- | ------- | ------- | ------- | ---- |
+| D1 | 0                             |       |       |       |    |
+| D2 | $\textcolor{red}{\textsf{1}}$ | 0     |       |       |    |
+| D3 | 2.236                         | 2     | 0     |       |    |
+| D4 | 3.606                         | 2.828 | 2     | 0     |    |
+| D5 | 4.472                         | 4.123 | 2.236 | 2.236 | 0  |
+
+Step 2: Merge D1 and D2 (smallest distance: 1)
+
+
+|         | (D1,D2) | D3                            | D4    | D5 |
+| --------- | --------- | ------------------------------- | ------- | ---- |
+| (D1,D2) | 0       |                               |       |    |
+| D3      | 2.236   | 0                             |       |    |
+| D4      | 3.606   | $\textcolor{red}{\textsf{2}}$ | 0     |    |
+| D5      | 4.472   | 2.236                         | 2.236 | 0  |
+
+- $d(D3,(D1,D2))= max[(D3,D1), (D3,D2)] = 2.236 $
+- $d(D4,(D1,D2))= max[(D4,D1), (D4,D2)] = 3.606 $
+- $d(D5,(D1,D2))= max[(D5,D1), (D5,D2)] = 4.472$
+-
+
+Step 3: Merge (D1,D2) and D3 (smallest distance: 2)
+
+
+|          | (D1,D2) | (D3, D4)                          | D5 |
+| ---------- | --------- | ----------------------------------- | ---- |
+| (D1,D2)  | 0       |                                   |    |
+| (D3, D4) | 3.606   | 0                                 |    |
+| D5       | 4.472   | $\textcolor{red}{\textsf{2.236}}$ | 0  |
+
+- $d((D3,D4),(D1,D2))= max[(D4,(D1,D2)), (D3,(D1,D2))] = 3.606$
+- $d(D5,(D3,D4))= max[(D5,D4), (D5,D3)] = 2.236$
+
+Step 4: Merge ((D1,D2),D3) and D4 (smallest distance: 2)
+
+
+|            | (D1,D2) | ((D3,D4),D5) |
+| ------------ | --------- | -------------- |
+| (D1,D2)    | 0       |              |
+| (D3,D4,D5) | 4.472   | 0            |
+
+- $d((D1,D2),((D3,D4),D5))= max[((D1,D2)),D5),((D1,D2),(D3,D4)] = 4.472$
+
+Step 5: Final merge (D1,D2) and (D3,D4,D5)
+
+# K-means
+
+k = 2
+
+c1 = (1,5)
+c2 = (2,5)
+
+Iteration 1
+
+![alt text](image.png)
+
+
+| old cluster | member | centroid |
+| ------------- | -------- | ---------- |
+| cluster 1   | 1      | [1,5]    |
+| cluster 2   | 2      | [2,5]    |
+
+
+| new cluster | member | centroid |
+| ------------- | -------- | ---------- |
+| cluster 1   | 1      | [1,5]    |
+| cluster 2   | 2,3,4  | [2.75,3] |
+
+Iteration 2
+
+![alt text](image-2.png)
+
+
+| old cluster | member | centroid |
+| ------------- | -------- | ---------- |
+| cluster 1   | 1      | [1,5]    |
+| cluster 2   | 2      | [2,5]    |
+
+
+| new cluster | member | centroid |
+| ------------- | -------- | ---------- |
+| cluster 1   | 1      | [1.5,5]  |
+| cluster 2   | 2,3,4  | [3,2.33] |
+
+Iteration 3
+
+
+| old cluster | member | centroid |
+| ------------- | -------- | ---------- |
+| cluster 1   | 1      | [1,5]    |
+| cluster 2   | 2      | [2,5]    |
+
+
+| new cluster | member | centroid |
+| ------------- | -------- | ---------- |
+| cluster 1   | 1      | [1.5,5]  |
+| cluster 2   | 2,3,4  | [3,2.33] |
+
+![alt text](image-3.png)
+
+there is no movement

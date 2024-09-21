@@ -1,0 +1,37 @@
+risk profiles (e.g. riskier customers, less risky customers, normal drivers, etc.).
+
+Syarat Praktikum 1:
+
+1. dataset harus beda dari yg lain, sumber bebas
+2. eda
+3. wajib kmeans, hierarchical, dbscan
+4. analisis hasil cluster
+
+bonus
+1. data mining sendiri
+2. insight dari eda
+3. algo diluar yg wajib
+
+
+PASTIIN YANG DI SUBMIT, NOTEBOOK NYA SUDAH DI RUN
+
+
+
+
+
+
+| Kode   | Jenis Bodi Kendaraan    | Penjelasan                                        |
+|--------|-------------------------|---------------------------------------------------|
+| HBACK  | Hatchback               | Mobil dengan pintu belakang yang bisa dibuka      |
+| UTE    | Utility                 | Kendaraan serbaguna, biasanya pickup              |
+| COUPE  | Coupe                   | Mobil dengan dua pintu, biasanya sport            |
+| SEDAN  | Sedan                   | Mobil penumpang dengan empat pintu                |
+| MIBUS  | Minibus                 | Bus kecil untuk penumpang                         |
+| HDTOP  | Hardtop                 | Mobil dengan atap keras yang bisa dilepas         |
+| STNWG  | Station wagon           | Mobil penumpang dengan bagasi besar/panjang       |
+| TRUCK  | Truck                   | Kendaraan besar untuk mengangkut barang           |
+| PANVN  | Panel van               | Van untuk pengangkutan barang                     |
+| MCARA  | Motorized caravan       | Karavan bermotor atau rumah mobil                 |
+| BUS    | Bus                     | Kendaraan besar untuk mengangkut banyak penumpang |
+| CONVT  | Convertible             | Mobil dengan atap yang bisa dibuka/dilipat        |
+| RDSTR  | Roadster                | Mobil sport terbuka, biasanya dua kursi           |
